@@ -1,27 +1,121 @@
-body{
-    background-color: darkred;
-    font-family: Arial, Helvetica, sans-serif;
-}
-h1{
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafb; /* Soft background */
+    color: #333;
     text-align: center;
-    color: black;
 }
-.projects{
-    display:flex; 
-    flex-wrap: wrap;
+
+/* Header styles */
+h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #2c7a7b; /* Deep green */
 }
-.project{
-    width: 30%;
-    margin: 10px;
-    padding: auto;
-    background: rgb(72, 0, 0);
-    border-radius: 25%;
+
+h2, h3 {
+    color: #e76f51; /* Vibrant orange */
+    margin-bottom: 10px;
 }
-.project img{
-    width: 300px;
-    height: 300px;
-    margin: 10px;
-    border:2px solid rgb(126,14,201);
+
+/* Section container */
+section {
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Paragraph styles */
+p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #4a4e69; /* Soft dark purple */
+}
+
+/* Image styles */
+img {
     display: block;
-    margin: auto;
+    margin: 15px auto;
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Button and links */
+a {
+    color: #2a9d8f; /* Teal */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #e76f51; /* Vibrant orange */
+    text-decoration: underline;
+}
+
+/* Styled buttons for PDFs */
+a[href$=".pdf"] {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #2c7a7b; /* Deep green */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+a[href$=".pdf"]:hover {
+    background-color: #264653; /* Dark teal */
+}
+
+/* Project cards */
+.project {
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid #e76f51; /* Orange border */
+    border-radius: 12px;
+    background-color: #f4f1de; /* Soft beige */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact section */
+.contact p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #264653; /* Dark teal */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2, h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    img {
+        width: 90%;
+    }
+
+    a[href$=".pdf"] {
+        font-size: 0.9rem;
+    }
 }
