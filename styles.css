@@ -35,7 +35,7 @@ main {
 }
 
 .about img {
-    width: 250px; /* Smaller size */
+    width: 300px;
     border-radius: 10px;
     border: 4px solid #c5a3ff;
 }
@@ -62,12 +62,8 @@ main {
 }
 
 .project img {
-    width: 90%; /* Slightly smaller images */
-    max-height: 200px; /* Added height constraint */
-    object-fit: cover; /* Crop if necessary */
+    width: 100%;
     border-radius: 10px;
-    margin: 0 auto;
-    display: block;
 }
 
 .project p {
