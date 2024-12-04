@@ -5,127 +5,89 @@ body {
     padding: 0;
     background-color: #1a1a2e; /* Dark purple background */
     color: #f4f3f8; /* Light text color for readability */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
-    overflow-x: hidden;
 }
 
-/* Header */
 h1 {
     font-size: 3em;
     color: #c5a3ff;
-    margin-top: 20px;
     text-align: center;
+    margin-top: 20px;
 }
 
-/* Main Layout */
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
     max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-}
-
-/* Section Styles */
-section {
-    background-color: #222244; /* Darker purple for contrast */
-    border: 1px solid #333;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    padding: 15px;
-}
-
-/* About Section */
-.about {
-    grid-column: span 2; /* Takes up the full row */
     display: flex;
     flex-direction: column;
+    gap: 30px;
+}
+
+/* About Me Section */
+.about {
+    display: flex;
     align-items: center;
-    text-align: center;
+    gap: 20px;
+    background-color: #222244;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .about img {
-    width: 200px;
-    height: auto;
-    border-radius: 50%;
-    margin: 10px 0;
+    width: 250px; /* Smaller size */
+    border-radius: 10px;
     border: 4px solid #c5a3ff;
 }
 
-/* Skills Section */
-.skills {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #2d2d48;
-    border-radius: 5px;
-    padding: 10px;
+.about p {
+    flex: 1;
+    text-align: justify;
+    line-height: 1.6;
 }
 
-.skills h3 {
-    margin: 0;
-    color: #e3b8ff;
+/* Skills Section */
+.skills, .contact {
+    background-color: #2d2d48;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Projects Section */
 .projects {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    grid-column: span 2; /* Full row for projects */
 }
 
 .project img {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    width: 90%; /* Slightly smaller images */
+    max-height: 200px; /* Added height constraint */
+    object-fit: cover; /* Crop if necessary */
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
 }
 
 .project p {
     text-align: justify;
-    font-size: 0.9em;
 }
 
-/* Contact Section */
-.contact {
-    grid-column: span 2; /* Takes up the full row */
-    text-align: center;
-    background-color: #2d2d48;
-    border-radius: 10px;
-    padding: 15px;
+/* Links */
+a {
+    color: #c5a3ff;
+    text-decoration: none;
 }
 
-/* Resume Button */
-a[href$=".pdf"] {
-    background-color: #4b0082;
-    color: #ffffff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-align: center;
-    display: inline-block;
-    margin-top: 10px;
+a:hover {
+    color: #ffccff;
 }
 
-a[href$=".pdf"]:hover {
-    background-color: #8a2be2;
-    color: #ffffff;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    margin: 20px 0;
-    font-size: 0.8em;
-    color: #888;
-}
-
-/* Media Queries */
+/* Responsive Design */
 @media (max-width: 768px) {
-    main {
-        grid-template-columns: 1fr;
+    .about {
+        flex-direction: column;
     }
 
     .projects {
