@@ -5,6 +5,12 @@ body {
     padding: 0;
     background-color: #1a1a2e; /* Dark purple background */
     color: #f4f3f8; /* Light text color for readability */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it fills the whole screen */
+    box-sizing: border-box;
 }
 
 h1 {
@@ -15,12 +21,13 @@ h1 {
 }
 
 main {
+    width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 30px;
+    box-sizing: border-box;
 }
 
 /* About Me Section */
@@ -32,6 +39,9 @@ main {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .about img {
@@ -52,13 +62,17 @@ main {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Projects Section */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .project img {
@@ -85,12 +99,50 @@ a:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
     .about {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .projects {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .about {
+        flex-direction: column;
+        align-items: center;
     }
 
     .projects {
         grid-template-columns: 1fr;
+    }
+
+    .skills, .contact {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .about img {
+        width: 200px; /* Smaller image size for very small screens */
+    }
+
+    .skills, .contact {
+        padding: 10px;
     }
 }
