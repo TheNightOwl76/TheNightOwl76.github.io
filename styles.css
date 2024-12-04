@@ -5,25 +5,22 @@ body {
     padding: 0;
     background-color: #1a1a2e; /* Dark purple background */
     color: #f4f3f8; /* Light text color for readability */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-/* Header Section */
 h1 {
     font-size: 3em;
     color: #c5a3ff;
-    margin: 20px 0;
+    text-align: center;
+    margin-top: 20px;
 }
 
-/* Main Layout */
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
     max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 /* About Me Section */
@@ -38,7 +35,7 @@ main {
 }
 
 .about img {
-    width: 300px;
+    width: 250px; /* Smaller size */
     border-radius: 10px;
     border: 4px solid #c5a3ff;
 }
@@ -46,7 +43,6 @@ main {
 .about p {
     flex: 1;
     text-align: justify;
-    font-size: 1.1em;
     line-height: 1.6;
 }
 
@@ -60,16 +56,25 @@ main {
 
 /* Projects Section */
 .projects {
-    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .project img {
-    width: 100%;
+    width: 90%; /* Slightly smaller images */
+    max-height: 200px; /* Added height constraint */
+    object-fit: cover; /* Crop if necessary */
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin: 0 auto;
+    display: block;
 }
 
-/* Links and Buttons */
+.project p {
+    text-align: justify;
+}
+
+/* Links */
 a {
     color: #c5a3ff;
     text-decoration: none;
@@ -79,10 +84,13 @@ a:hover {
     color: #ffccff;
 }
 
-/* Responsiveness */
+/* Responsive Design */
 @media (max-width: 768px) {
     .about {
         flex-direction: column;
-        text-align: center;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
     }
 }
